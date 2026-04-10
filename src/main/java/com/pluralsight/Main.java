@@ -23,13 +23,30 @@ public class Main {
         String answer = scanner.nextLine().toUpperCase();
 
         switch (answer) {
-            case "A" -> System.out.println(num1 + " + " + num2 + " = " + (num1 + num2));
-            case "S" -> System.out.println(num1 + " - " + num2 + " = " + (num1 - num2));
-            case "M" -> System.out.println(num1 + " * " + num2 + " = " + (num1 * num2));
-            default -> System.out.println(num1 + " / " + num2 + " = " + (num1 / num2));
+            case "A" -> add(num1, num2);
+            case "S" -> subtract(num1, num2);
+            case "M" -> multiply(num1, num2);
+            default -> divide(num1, num2);
         }
+    }
 
+    public static void add(int a, int b) {
+        System.out.println(a + " + " + b + " = " + (a + b));
+    }
 
+    public static void subtract(int a, int b) {
+        System.out.println(a + " - " + b + " = " + (a - b));
+    }
 
+    public static void multiply(int a, int b) {
+        System.out.println(a + " * " + b + " = " + (a * b));
+    }
+
+    public static void divide(int a, int b) {
+        if (b == 0) {
+            System.out.println("Cannot divide by zero.");
+        } else {
+            System.out.println(a + " / " + b + " = " + (a / b));
+        }
     }
 }
